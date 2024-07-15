@@ -1,0 +1,20 @@
+{
+  "name": "MasterBack",
+  "version": "1.0.0",
+  "description": "DevMaster API",
+  "main": "src/server.js",
+  "license": "MIT",
+  "dependencies": {
+    "eslint": "9.x",
+    "express": "^4.19.2",
+    "nodemon": "^3.1.4",
+    "sucrase": "^3.35.0"
+  },
+  "scripts": {
+    "dev": "nodemon"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.7.0",
+    "globals": "^15.8.0"
+  }
+}
