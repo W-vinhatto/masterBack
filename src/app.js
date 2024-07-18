@@ -1,7 +1,8 @@
 
-import express from 'express'
+import express from "express"
 import routes from './routes'
-
+// dessa forma aplicação do database é carregado automaticamente
+import './database'
 
 class App {
     constructor(){
