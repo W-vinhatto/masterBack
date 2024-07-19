@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-import authConfig from "../config/auth";
+import authConfig from "../../config/auth";
 
 // fazendo pré definição de onde middllewares irá receber token
 function authMiddllewares(request, response, next) {
@@ -21,6 +21,7 @@ function authMiddllewares(request, response, next) {
       }
 
       request.userId = decoded.id;
+      request.userName = decoded.name
     });
   } catch (err) {
     return response.status(401).json({ error: err });

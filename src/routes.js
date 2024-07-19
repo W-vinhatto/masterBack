@@ -1,12 +1,13 @@
 import { Router } from "express";
 import multer from "multer";
 import multerConfig from "./config/multer";
-import authMiddllewares from './middelewares/auth'
+import authMiddllewares from './app/middelewares/auth'
 
 import UserController from "./app/controller/UserController";
 import SessionController from "./app/controller/SessionController";
 import productController from "./app/controller/productController";
 import CategoryController from "./app/controller/CategoryController";
+import OrderController from "./app/controller/OrderController.js";
 
 
 
@@ -24,6 +25,9 @@ routes.get("/products", productController.index);
 
 routes.post("/categories", CategoryController.store);
 routes.get("/categories", CategoryController.index);
+
+routes.post("/order", OrderController.store);
+
 
 
 
