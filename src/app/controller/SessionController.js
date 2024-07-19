@@ -1,5 +1,7 @@
 import * as Yup from "yup";
 import User from "../models/User";
+import jwt from 'jsonwebtoken'
+import authConfig from '../../config/auth'
 
 // determinando como front deve enviar dados de logout para api
 class SessionController {
@@ -41,11 +43,14 @@ class SessionController {
     }
 
     // caso todas informações estão corretas retorna user para front
-    return response.json({
+    return response.status(200).json({
       id: user.id,
       name: user.name,
       email: user.email,
       admin: user.admin,
+      token: jwt.sign({ id: user.id }, authConfig.secret, {
+        expiresIn: authConfig.expiresIn,
+      }),
     });
   }
 }
