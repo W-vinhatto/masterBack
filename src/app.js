@@ -2,12 +2,15 @@
 import express from "express"
 import routes from './routes'
 import {resolve} from 'node:path'
+import cors from 'cors'
 // dessa forma aplicação do database é carregado automaticamente
 import './database'
 
 class App {
     constructor(){
         this.app = express()
+        this.app.use(cors())
+
         this.middlewares()
         this.routes()
     }

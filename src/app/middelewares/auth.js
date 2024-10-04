@@ -13,7 +13,7 @@ function authMiddllewares(request, response, next) {
   // fazendo separação dentro de um por espaco dentro de um array pra pegar apenas a posição auth
   const validToken = authToken.split(" ").at(1);
 
-  // verifica a poição athu se é valido com .secret dentro do token antes de deixar aplicação seguir com token invalido
+  // verifica a poição auth se é valido com .secret dentro do token antes de deixar aplicação seguir com token invalido
   try {
     jwt.verify(validToken, authConfig.secret, (err, decoded) => {
       if (err) {
